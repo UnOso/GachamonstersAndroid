@@ -42,8 +42,9 @@ class MainMenuFragment : Fragment(),
         options = arrayOf(
             MainMenuOptionModel("Play", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_play_circle)),
             MainMenuOptionModel("Team", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_team_option)),
+            MainMenuOptionModel("Inventory", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_inventory_option)),
             MainMenuOptionModel("Options", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_settings_option)),
-            MainMenuOptionModel("Inventory", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_inventory_option))
+            MainMenuOptionModel("Exit", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_exit_to_app_option))
         )
     }
 
