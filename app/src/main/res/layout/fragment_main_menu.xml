@@ -8,12 +8,16 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_main_menu_option_slider_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="4dp"
+        android:layout_marginEnd="10dp"
+        android:layoutAnimation="@anim/layout_fall_down_anim"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="horizontal"
-        android:layout_margin="30dp"
-        tools:listitem="@layout/fragment_main_menu_option_slider_item"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/fragment_main_menu_option_slider_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,15 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.res.ResourcesCompat
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.polariumx.gachamonsters.R
 import com.polariumx.gachamonsters.databinding.FragmentMainMenuBinding
 import com.polariumx.gachamonsters.features.model.MainMenuOptionModel
 
-class MainMenuFragment : Fragment() {
+class MainMenuFragment : Fragment(),
+    MainMenuOptionSliderRecyclerAdapter.OptionItemListener{
 
     private lateinit var binding: FragmentMainMenuBinding
+    private lateinit var options: Array<MainMenuOptionModel>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,20 +27,33 @@ class MainMenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
+        setupConfig()
+        setupUI()
     }
 
-    fun setupUI(){
-//        binding.fragmentMainMenuOptionSliderRecyclerView.adapter =
+    private fun setupUI(){
+        binding.fragmentMainMenuOptionSliderRecyclerView.apply {
+            setHasFixedSize(true)
+            adapter = MainMenuOptionSliderRecyclerAdapter(options, this@MainMenuFragment)
+        }
+    }
+
+    private fun setupConfig(){
+        options = arrayOf(
+            MainMenuOptionModel("Play", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_play_circle)),
+            MainMenuOptionModel("Team", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_team_option)),
+            MainMenuOptionModel("Options", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_settings_option)),
+            MainMenuOptionModel("Inventory", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_inventory_option))
+        )
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
     }
 
-//    private val options: Array<MainMenuOptionModel> {
-//        MainMenuOptionModel("Helo", ResourcesCompat.getDrawable(resources, R.drawable.ic_baseline_play_circle_filled_24))
-//    }
+    override fun onChatClicked(text: String) {
+        Toast.makeText(requireContext(), text + " tapped", Toast.LENGTH_SHORT).show()
+    }
+
+
 }
