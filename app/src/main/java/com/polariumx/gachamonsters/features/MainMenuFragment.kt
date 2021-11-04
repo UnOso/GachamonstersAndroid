@@ -9,13 +9,15 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.polariumx.gachamonsters.R
 import com.polariumx.gachamonsters.databinding.FragmentMainMenuBinding
+import com.polariumx.gachamonsters.features.model.MainMenuGachaStatModel
 import com.polariumx.gachamonsters.features.model.MainMenuOptionModel
 
 class MainMenuFragment : Fragment(),
-    MainMenuOptionSliderRecyclerAdapter.OptionItemListener{
+    MainMenuOptionSliderRecyclerAdapter.OptionItemListener {
 
     private lateinit var binding: FragmentMainMenuBinding
     private lateinit var options: Array<MainMenuOptionModel>
+    private lateinit var stats: Array<MainMenuGachaStatModel>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,20 +33,38 @@ class MainMenuFragment : Fragment(),
         setupUI()
     }
 
-    private fun setupUI(){
+    private fun setupUI() {
         binding.fragmentMainMenuOptionSliderRecyclerView.apply {
             setHasFixedSize(true)
             adapter = MainMenuOptionSliderRecyclerAdapter(options, this@MainMenuFragment)
         }
+
+        binding.fragmentMainMenuGachamonstersStatsRecyclerView.apply {
+            setHasFixedSize(true)
+            adapter = MainMenuOptionGachamonstersStatsAdapter(stats)
+        }
+
     }
 
-    private fun setupConfig(){
+    private fun setupConfig() {
         options = arrayOf(
             MainMenuOptionModel("Play", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_play_circle)),
             MainMenuOptionModel("Team", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_team_option)),
-            MainMenuOptionModel("Inventory", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_inventory_option)),
+            MainMenuOptionModel(
+                "Inventory",
+                ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_inventory_option)
+            ),
             MainMenuOptionModel("Options", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_settings_option)),
             MainMenuOptionModel("Exit", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_exit_to_app_option))
+        )
+
+        stats = arrayOf(
+            MainMenuGachaStatModel("HP", 10),
+            MainMenuGachaStatModel("ATK", 1),
+            MainMenuGachaStatModel("DEF", 1),
+            MainMenuGachaStatModel("M.ATK", 1),
+            MainMenuGachaStatModel("M.DEF", 1),
+            MainMenuGachaStatModel("SPEED", 1)
         )
     }
 

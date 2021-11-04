@@ -6,6 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".features.MainMenuFragment">
 
+    <LinearLayout
+        android:id="@+id/fragment_main_menu_layout_gachamonsters"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:text="Gachamon LVL"
+            android:fontFamily="@font/cabin"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_main_menu_gachamonsters_stats_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layoutAnimation="@anim/layout_fall_down_anim"
+            android:orientation="vertical"
+            tools:itemCount="5"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/fragment_main_menu_gachamonsters_stats_item" />
+
+    </LinearLayout>
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_main_menu_option_slider_recycler_view"
         android:layout_width="wrap_content"
