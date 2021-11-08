@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.MainMenuFragment">
+    tools:context=".features.MainMenuFragment"
+    android:background="@color/mainColor">
 
     <LinearLayout
         android:id="@+id/fragment_main_menu_layout_gachamonsters"
@@ -17,6 +18,7 @@
         android:layout_margin="20dp">
 
         <TextView
+            android:id="@+id/fragment_main_menu_gachamonsters_level_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -33,10 +35,18 @@
             android:orientation="vertical"
             tools:itemCount="5"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/fragment_main_menu_gachamonsters_stats_item" />
+            tools:listitem="@layout/fragment_main_menu_gachamonsters_stats_item"/>
 
     </LinearLayout>
 
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/fragment_main_menu_layout_gachamonsters"
+        app:layout_constraintStart_toEndOf="@id/fragment_main_menu_layout_gachamonsters"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_main_menu_layout_gachamonsters"
+        app:layout_constraintEnd_toStartOf="@id/fragment_main_menu_option_slider_recycler_view"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_main_menu_option_slider_recycler_view"
