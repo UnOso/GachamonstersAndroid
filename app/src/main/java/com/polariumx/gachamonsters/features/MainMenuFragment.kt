@@ -12,6 +12,7 @@ import com.polariumx.gachamonsters.R
 import com.polariumx.gachamonsters.databinding.FragmentMainMenuBinding
 import com.polariumx.gachamonsters.features.model.MainMenuGachaStatModel
 import com.polariumx.gachamonsters.features.model.MainMenuOptionModel
+import com.polariumx.gachamonsters.features.sampleData.sampleDataGachamonStats
 
 class MainMenuFragment : Fragment(),
     MainMenuOptionSliderRecyclerAdapter.OptionItemListener {
@@ -61,14 +62,7 @@ class MainMenuFragment : Fragment(),
             MainMenuOptionModel("Exit", ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_exit_to_app_option))
         )
 
-        stats = arrayOf(
-            MainMenuGachaStatModel("HP", 10),
-            MainMenuGachaStatModel("ATK", 1),
-            MainMenuGachaStatModel("DEF", 1),
-            MainMenuGachaStatModel("M.ATK", 1),
-            MainMenuGachaStatModel("M.DEF", 1),
-            MainMenuGachaStatModel("SPEED", 1)
-        )
+        stats = sampleDataGachamonStats.statsGachamonNormal
     }
 
     override fun onDestroyView() {
