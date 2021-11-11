@@ -6,21 +6,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.polariumx.gachamonsters.R
+import com.polariumx.gachamonsters.databinding.FragmentGachaStoreBinding
 
 class GachaStoreFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
-    }
+    private lateinit var binding: FragmentGachaStoreBinding;
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gacha_store, container, false)
+        binding = FragmentGachaStoreBinding.inflate(layoutInflater);
+        return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+
     }
 
 }

@@ -65,7 +65,13 @@ class MainMenuFragment : Fragment(),
     }
 
     override fun onItemClicked(id:Int) {
-        
+        navigate(id)
+    }
+
+    private fun navigate(id: Int){
+        when(id){
+            4 -> findNavController().navigate(R.id.action_FirstFragment_to_gachaStoreFragment)
+        }
     }
 
 
