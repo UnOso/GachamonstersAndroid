@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:src="@drawable/perma_banner_image"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toEndOf="@id/fragment_gachamon_store_banner_layout"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,8 +30,7 @@
             android:id="@+id/fragment_gachamon_store_perma_image"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:src="@drawable/ic_baseline_circle_24"
-            app:tint="@color/red" />
+            android:src="@drawable/perma_banner_image" />
 
         <TextView
             android:id="@+id/fragment_gachamon_store_perma_text"
@@ -45,8 +45,7 @@
             android:id="@+id/fragment_gachamon_store_promo_image"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:src="@drawable/ic_baseline_circle_24"
-            app:tint="@color/blue" />
+            android:src="@drawable/promo_banner_image" />
 
         <TextView
             android:id="@+id/fragment_gachamon_store_promo_text"

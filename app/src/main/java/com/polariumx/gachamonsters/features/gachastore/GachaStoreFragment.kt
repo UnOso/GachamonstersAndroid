@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.polariumx.gachamonsters.R
@@ -34,14 +35,10 @@ class GachaStoreFragment : Fragment() {
             findNavController().navigateUp()
         })
         binding.fragmentGachamonStorePermaImage.setOnClickListener {
-            changeSrc(ContextCompat.getDrawable(requireContext(), R.color.red))
+            binding.fragmentGachamonStoreChosenBannerImage.setImageResource(R.drawable.perma_banner_image)
         }
         binding.fragmentGachamonStorePromoImage.setOnClickListener {
-            //changeSrc(ContextCompat.getColor(requireContext(), R.color.blue))
+            binding.fragmentGachamonStoreChosenBannerImage.setImageResource(R.drawable.promo_banner_image)
         }
-    }
-
-    private fun changeSrc(drawable: Drawable?) {
-        binding.fragmentGachamonStoreChosenBannerImage.setImageDrawable(drawable);
     }
 }
