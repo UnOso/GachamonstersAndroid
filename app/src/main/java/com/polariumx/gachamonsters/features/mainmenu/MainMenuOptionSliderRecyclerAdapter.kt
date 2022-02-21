@@ -1,11 +1,10 @@
-package com.polariumx.gachamonsters.features
+package com.polariumx.gachamonsters.features.mainmenu
 
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.polariumx.gachamonsters.databinding.FragmentMainMenuOptionSliderItemBinding
-import com.polariumx.gachamonsters.features.model.MainMenuOptionModel
+import com.polariumx.gachamonsters.features.mainmenu.model.MainMenuOptionModel
 
 class MainMenuOptionSliderRecyclerAdapter(
     private val options: Array<MainMenuOptionModel>,
@@ -34,12 +33,12 @@ class MainMenuOptionSliderRecyclerAdapter(
         fun bindView(option: MainMenuOptionModel) = with(binding) {
 
             fragmentMainMenuOptionSliderItemImage.setImageDrawable(option.optionDrawable)
-            fragmentMainMenuOptionSliderItemImage.setOnClickListener { listener.onChatClicked(option.optionText) }
+            fragmentMainMenuOptionSliderItemImage.setOnClickListener { listener.onItemClicked(option.id) }
             fragmentMainMenuOptionSliderItemText.text = option.optionText
         }
     }
 
     interface OptionItemListener {
-        fun onChatClicked(text: String)
+        fun onItemClicked(id: Int)
     }
 }

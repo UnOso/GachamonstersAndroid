@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/gray"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/fragment_gachamon_store_chosen_banner_image"
+        android:layout_width="450dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/perma_banner_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toEndOf="@id/fragment_gachamon_store_banner_layout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/fragment_gachamon_store_banner_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/fragment_gachamon_store_perma_image"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/perma_banner_image" />
+
+        <TextView
+            android:id="@+id/fragment_gachamon_store_perma_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/gachamon_store_fragment_permanent_banner_text"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/fragment_gachamon_store_promo_image"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/promo_banner_image" />
+
+        <TextView
+            android:id="@+id/fragment_gachamon_store_promo_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/gachamon_store_fragment_promotional_banner_text"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/fragment_gachamon_store_exit_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/mainColor"
+            android:text="@string/generic_action_return" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

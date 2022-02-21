@@ -1,4 +1,4 @@
-package com.polariumx.gachamonsters.features.model
+package com.polariumx.gachamonsters.features.mainmenu.model
 
 data class MainMenuGachaStatModel (
     val statName : String,

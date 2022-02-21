@@ -7,36 +7,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.polariumx.gachamonsters.R
+import com.polariumx.gachamonsters.databinding.FragmentGachaStoreBinding
+import com.polariumx.gachamonsters.databinding.FragmentMainMenuBinding
 import com.polariumx.gachamonsters.databinding.FragmentSecondBinding
+import com.polariumx.gachamonsters.features.mainmenu.model.MainMenuGachaStatModel
+import com.polariumx.gachamonsters.features.mainmenu.model.MainMenuOptionModel
 
 class SecondFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
+    private lateinit var binding: FragmentGachaStoreBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        binding = FragmentGachaStoreBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    private fun setupUI(){
 
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-        }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

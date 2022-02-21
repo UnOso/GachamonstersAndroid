@@ -1,11 +1,10 @@
-package com.polariumx.gachamonsters.features
+package com.polariumx.gachamonsters.features.mainmenu
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.polariumx.gachamonsters.databinding.FragmentMainMenuGachamonstersStatsItemBinding
-import com.polariumx.gachamonsters.features.model.MainMenuGachaStatModel
-import com.polariumx.gachamonsters.features.model.MainMenuOptionModel
+import com.polariumx.gachamonsters.features.mainmenu.model.MainMenuGachaStatModel
 
 class MainMenuOptionGachamonstersStatsAdapter(
     private val stats: Array<MainMenuGachaStatModel>,

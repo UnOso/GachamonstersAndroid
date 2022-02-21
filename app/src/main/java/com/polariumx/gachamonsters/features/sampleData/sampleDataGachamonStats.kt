@@ -1,6 +1,6 @@
 package com.polariumx.gachamonsters.features.sampleData
 
-import com.polariumx.gachamonsters.features.model.MainMenuGachaStatModel
+import com.polariumx.gachamonsters.features.mainmenu.model.MainMenuGachaStatModel
 
 object sampleDataGachamonStats {
     val statsGachamonNormal: Array<MainMenuGachaStatModel> = arrayOf(
